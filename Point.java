@@ -25,4 +25,8 @@ public class Point {
 		return Math.pow(Math.pow(other.getX() - this.getX(),2) + Math.pow(other.getY() - this.getY(),2), 1/2);
 	}
 
+	public boolean equals(Point other) {
+		return (this.getX() == other.getX() && this.getY() == other.getY());
+	}
+
 }

@@ -17,12 +17,26 @@ public class Triangle{
 	}
 
 	public double getPerimeter() {
-		return (this.v1.distanceTo(v2) + this.v2.distanceTo(v3) + this.v3.distanceTo(v1));
+		double x1 = v1.distanceTo(v2);
+		double x2 = v2.distanceTo(v3);
+		double x3 = v3.distanceTo(v1);
+		//System.out.println(x1 + "====");
+                //System.out.println(x2 + "=======");
+                //System.out.println(x3 + "=");
+		//System.out.println(x1 + x3);
+		double n = x1 + x2 + x3;
+		return n;
 	}
 
 	public double getArea() {
-		double x = this.getPerimeter();
-		return (Math.pow(x * (x - this.v1.distanceTo(v2)) * (x - this.v2.distanceTo(v3)) * (x - this.v3.distanceTo(v1)),1/2));
+		//double x = this.getPerimeter();
+		//return (Math.pow(x * (x - this.v1.distanceTo(v2)) * (x - this.v2.distanceTo(v3)) * (x - this.v3.distanceTo(v1)),1/2));
+		double semi = this.getPerimeter()/2;
+		double a = v1.distanceTo(v2);
+		double b = v2.distanceTo(v3);
+		double c = v3.distanceTo(v1);
+		double area = Math.sqrt(semi * (semi - a) * (semi - b) * (semi - c));
+		return area;
 	}
 
 	public double rounding(double x) {
@@ -48,7 +62,7 @@ public class Triangle{
 	}
 
 	public String toString() {
-		return ("v1(" + String.valueOf(this.v1.getX()) + ", " + String.valueOf(this.v1.getY()) + ") v2(" + String.valueOf(this.v2.getX()) + ", " + String.valueOf(this.v2.getY()) + ") v3(" + String.valueOf(this.v3.getX()) + ", " + String.valueOf(this.v3.getY()));
+		return ("v1(" + String.valueOf(this.v1.getX()) + ", " + String.valueOf(this.v1.getY()) + ") v2(" + String.valueOf(this.v2.getX()) + ", " + String.valueOf(this.v2.getY()) + ") v3(" + String.valueOf(this.v3.getX()) + ", " + String.valueOf(this.v3.getY()) + ")");
 	}
 
 	public void setVertex(int index, Point newP) {

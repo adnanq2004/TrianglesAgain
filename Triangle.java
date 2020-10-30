@@ -25,4 +25,26 @@ public class Triangle{
 		return (Math.pow(x * (x - this.v1.distanceTo(v2)) * (x - this.v2.distanceTo(v3)) * (x - this.v3.distanceTo(v1)),1/2));
 	}
 
+	public double rounding(double x) {
+		double x1 = x * 10000;
+		double x2 = Math.round(x1);
+		double x3 = x2/10000;
+		return x3;
+	}
+
+	public String classify() {
+		double side1 = rounding(this.v1.distanceTo(v2));
+		double side2 = rounding(this.v2.distanceTo(v3));
+		double side3 = rounding(this.v3.distanceTo(v1));
+		if (side1 == side2 && side2 == side3) {
+			return "equilateral";
+		}
+		else if (side1 == side2 || side2 == side3 || side3 == side1) {
+			return "isosceles";
+		}
+		else {
+			return "scalene";
+		}
+	}
+
 }

@@ -51,4 +51,19 @@ public class Triangle{
 		return ("v1(" + String.valueOf(this.v1.getX()) + ", " + String.valueOf(this.v1.getY()) + ") v2(" + String.valueOf(this.v2.getX()) + ", " + String.valueOf(this.v2.getY()) + ") v3(" + String.valueOf(this.v3.getX()) + ", " + String.valueOf(this.v3.getY()));
 	}
 
+	public void setVertex(int index, Point newP) {
+		if (index == 0) {
+			v1 = new Point(newP);
+		}
+		else if (index == 1) {
+			v2 = new Point(newP);
+		}
+		else if (index == 2){
+			v3 = new Point(newP);
+		}
+		else {
+			System.out.println("invalid index provided");
+		}
+	}
+
 }

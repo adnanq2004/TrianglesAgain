@@ -47,4 +47,8 @@ public class Triangle{
 		}
 	}
 
+	public String toString() {
+		return ("v1(" + String.valueOf(this.v1.getX()) + ", " + String.valueOf(this.v1.getY()) + ") v2(" + String.valueOf(this.v2.getX()) + ", " + String.valueOf(this.v2.getY()) + ") v3(" + String.valueOf(this.v3.getX()) + ", " + String.valueOf(this.v3.getY()));
+	}
+
 }
